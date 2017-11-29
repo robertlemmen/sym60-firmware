@@ -101,16 +101,16 @@ matrix_row_t matrix_get_row(uint8_t row)
 static void  init_cols(void)
 {
     // Input with pull-up(DDR:0, PORT:1)
-    DDRF  &= ~(1<<7, 1<<6, 1<<5, 1<<4, 1<<1 | 1<<0);
-    PORTF |=  (1<<7, 1<<6, 1<<5, 1<<4, 1<<1 | 1<<0);
+    DDRF  &= ~(1<<7 | 1<<6 | 1<<5 | 1<<4 | 1<<1 | 1<<0);
+    PORTF |=  (1<<7 | 1<<6 | 1<<5 | 1<<4 | 1<<1 | 1<<0);
     DDRE  &= ~(0);
     PORTE |=  (0);
     DDRD  &= ~(1<<1 | 1<<0);
     PORTD |=  (1<<1 | 1<<0);
     DDRC  &= ~(0);
     PORTC |=  (0);
-    DDRB  &= ~(1<<7 | 1<<3 | 1<<2 | 1<<1 | 1<<0);
-    PORTB |=  (1<<7 | 1<<3 | 1<<2 | 1<<1 | 1<<0);
+    DDRB  &= ~(1<<7 | 1<<6 | 1<<3 | 1<<2 | 1<<1 | 1<<0);
+    PORTB |=  (1<<7 | 1<<6 | 1<<3 | 1<<2 | 1<<1 | 1<<0);
 }
 
 static matrix_row_t read_cols(void)
