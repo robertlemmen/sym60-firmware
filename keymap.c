@@ -6,6 +6,15 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    QUOT,  BSPC, \
            CAPS, GRV,  A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN,  LBRC, RBRC,  \
               LSFT, BSLS, Z,    X,    C,    V,    B,    N,    M,    COMM, DOT,  SLSH,  RSFT, \
-           LCTL, LALT, LEFT, DOWN,       ENT,              SPC,        UP,   RGHT,  RALT, RCTL, NO)
+           LCTL, LALT, LEFT, DOWN,       FN0,              FN1,        UP,   RGHT,  RALT, RCTL),
+    /* 1: overlay for missing keys */
+    KEYMAP(TRNS,    F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,  F10, TRNS, TRNS, TRNS, \
+              TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,  F15, TRNS,  F16, TRNS, TRNS, DEL, \
+           TRNS, TRNS,  F13,  F14, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,  \
+              TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, \
+           TRNS, TRNS, HOME, PGDN,      TRNS,             TRNS,      PGUP,    END,  TRNS, TRNS)
 };
-const action_t PROGMEM fn_actions[] = {};
+const action_t PROGMEM fn_actions[] = {
+    [0] = ACTION_LAYER_TAP_KEY(1, KC_ENT),
+    [1] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),
+};
